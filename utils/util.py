@@ -1,4 +1,4 @@
-from .d import d
+from utils.d import d
 import numpy as np
 
 
@@ -26,6 +26,8 @@ def single_attack(hit, crit, mod, prof, ac=14, attack_roll=d(20), gwm=False):
 
 	result = d()
 	for val, prob in attack_roll:
+		if val == 1:
+			result.layer(d(0), prob)
 		if (val + mod + prof - gwm_malus) >= ac:
 			if val == 20:
 				result.layer(crit + gwm_bonus, prob)

@@ -3,9 +3,6 @@ import os
 import numpy as np
 
 
-__author__ = 'sam'
-
-
 def plot(*dice, draw_mean=False, show_plot=True, title=None, save_plot=False, overwrite_file=False, mode='normal'):
 	plt.figure(figsize=(16, 9), dpi=80)
 	plt.rc(
@@ -30,7 +27,7 @@ def plot(*dice, draw_mean=False, show_plot=True, title=None, save_plot=False, ov
 	# figure = plt.figure() # TODO: improve pyplot usage
 	plt.xlabel('dice roll value')
 	plt.ylabel('likelihood (in percent)')
-	plt.title('DnDice' if title is None else title)
+	plt.title('Dice' if title is None else title)
 	plt.ylim(ymin=0)
 	plt.legend(loc='upper right')
 	plt.grid(True)
@@ -95,8 +92,20 @@ colors = {
 	'green': '#859900',
 	'black': '#000000',
 }
+nice_colors = [
+	'#003f5c',
+	'#ef5675',
+	'#7a5195',
+	'#ff764a',
+	'#374c80',
+	'#bc5090',
+	'#ffa600'
+]
 
-color_list = list(colors.values())
+# color_list = list(colors.values())
+color_list = nice_colors
+
+
 
 plot_modes = {
 	'normal': lambda ydata: ydata*100,

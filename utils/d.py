@@ -1,6 +1,4 @@
-__author__ = 'sam <vogelsangersamuel@hotmail.com>, piMoll'
-
-from .plot import plot as dndplot
+from utils.plot import plot as dndplot
 import math
 import numpy as np
 
