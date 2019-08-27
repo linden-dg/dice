@@ -1,11 +1,12 @@
 from utils import single_attack
 from utils.dice import d8
 
+
 class Attack:
-    def __init__(self, name="default attack", hit=d8, crit=-99, mod=4, prof=3, bonus_damage=0, number_of_attacks=1, include_dmg_mod=True):
+    def __init__(self, name="default attack", hit=d8, crit=None, mod=4, prof=3, bonus_damage=0, number_of_attacks=1, include_dmg_mod=True):
         self.name = name
         self.hit = hit
-        self.crit = 2 * hit if crit == -99 else crit
+        self.crit = 2 * hit if crit is None else crit
         self.mod = mod
         self.prof = prof
         self.bonus_damage = bonus_damage
