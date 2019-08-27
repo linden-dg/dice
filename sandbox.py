@@ -26,9 +26,18 @@ eelfin = (
     "Eelfinn Base"
 )
 
+otis_main = Attack(hit=d6, number_of_attacks=2)
+otis_pet = Attack(hit=2*d6)
+
+otis = (
+    otis_main.attack() + otis_pet.attack(),
+    "Otis Base"
+)
+
 plot(
     varellion,
     aukhan.plot(),
     eelfin,
+    otis,
     mode='atMost'
 )
